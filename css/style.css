@@ -5,7 +5,6 @@
     --secondary: #21ce21;
     --text: #1D1D1D;
     --sectionbg: #4c6b76b4;
-
 }
 
 *{
@@ -275,10 +274,9 @@ main section {
     height: 240px;
     object-fit: cover;
     border-radius: 3px;
-
 }
 
-.container-galerie img :hover{
+.container-galerie img:hover {
     filter: drop-shadow(0 0 4px var(--secondary));
 }
 
@@ -299,14 +297,14 @@ main section {
     background: linear-gradient( var(--primary), var(--sectionbg) );
 }
 
+
 .harta {
     width: 100%;
     height: 450px;
     border-radius: 3px;
-
 }
 
-.contace-info a {
+.contacte-info a {
     color: var(--text) !important;
 }
 
@@ -318,11 +316,10 @@ main section {
     text-align: center;
     padding: 2px 10px 20px 10px;
     margin-top: 15px;
-    border: 2px;
     overflow: auto;
 }
 
-.formular-container input,  .formular-container textarea {
+.formular-container input, .formular-container textarea {
     font-family: inherit;
     width: 80%;
     margin-bottom: 10px;
@@ -337,7 +334,7 @@ main section {
 .formular-container input[type="button"] {
     cursor:pointer;
     width: 130px;
-    float: right;
+    float:right;
     margin-right: 10%;
 }
 
@@ -356,13 +353,106 @@ footer {
 }
 
 .container-noutati {
-    width: calc(100% - 300px);
+     /* width: 100%; daca nu aveti pagina pe FB */
+    width: calc(100% - 310px);
+    float:left;
+}
+
+.fb-desktop {
+    float: right;
+    margin-top: 90px;
+}
+
+.fb-mobile {
+    display: none;
+}
+
+#noutati {
+    overflow: auto;
+    min-height: 95vh;
+    padding-right: 8%;
 }
 
 .noutate {
     border: 2px solid lightgray;
     border-radius: 5px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: relative;
+    padding: 0px 15px 10px 15px;
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+.data {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 0.8rem;
+}
+
+.noutate img {
+    width: 25%;
+    float: left;
+    margin-right: 12px;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.noutate p {
+    font-size: 0.9rem;
+}
+
+#orar {
+    min-height: 95vh;
+}
+
+.orar-details {
+    border: 2px solid lightgray;
+    padding: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.orar-details summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.orar-details img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+
+.orar-imagini {
+    border-top: 2px solid lightgrey;
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.orar-imagini a {
+    position: relative;
+    height: 220px;
+    width: 220px;
+    top: 10px;
+}
+
+.clasa {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    background-color: #00000071;
+
 }
 
 @keyframes icon-anim1 {
@@ -379,49 +469,107 @@ footer {
     100% { transform: translateX(0) scale(1); }
 }
 
-@media (max-width: 1100px) {
-    main section { 
+@media (max-width: 1300px) {
+    main section {
         padding-left: 10%;
         padding-right: 10%;
+    }
+    .noutate img {
+        width: 40%;
+    }
+}
 
+@media (max-width: 1300px) {
+    
+    .noutate img {
+        float: none;
+        max-height: 240px;
+        display: block;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 780px) {
+
     html {
         font-size: 16px;
     }
-    main section { 
+
+    main section {
         padding-left: 10px;
         padding-right: 10px;
     }
-    .intro-content{
+
+    .intro-content h1 {
         font-size: 2.4rem;
     }
+
     .slideshow {
         height: 50vh;
     }
+
     .container-galerie img {
         width: 160px;
         height: 140px;
     }
+
     [class^="col-"] {
         width: 100%;
     }
+
     .formular-container {
         width: 100%;
         margin-bottom: 15px;
         max-width: none;
     }
+
     .hamburger {
         display: inline-block !important;
         position: absolute;
+        top: 20px;
+        right: 25px;
     }
+
+    .nav {
+        float: none;
+    }
+
     .nav a {
         display: none;
     }
+
+    .nav.mobile a {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
     #intro {
         background-position: 70%;
+    }
+
+    #noutati {
+        padding-right: 10px;
+    }
+
+    .fb-desktop {
+        display: none;
+    }
+
+    .fb-mobile {
+        display: block;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .container-noutati {
+        width: 100%;
+        float: none;
+    }
+
+    .orar-imagini a {
+        width: 145px;
+        height: 145px;
     }
 
 }
